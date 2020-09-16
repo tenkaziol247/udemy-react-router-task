@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, NavLink, Redirect } from 'react-router-dom';
+import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
 
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
@@ -7,7 +7,6 @@ import Users from './containers/Users/Users';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
         <div>
           <ol style={{ textAlign: 'left' }}>
             <li>Add Routes to load "Users" and "Courses" on different pages (by entering a URL, without Links)</li>
@@ -20,8 +19,8 @@ class App extends Component {
             <li>Redirect requests to /all-courses to /courses (= Your "Courses" page)</li>
           </ol>
           <nav>
-            <ul>
-              <li>
+            <ul style={{listStyle: 'none', display: 'flex', justifyContent: 'center'}}>
+              <li style={{marginRight: '16px'}}>
                 <NavLink to='/users'>Users</NavLink>
               </li>
               <li>
@@ -36,7 +35,6 @@ class App extends Component {
             <Route path='' render={() => <h1>404 Not Found!</h1>} />
           </Switch>
         </div>
-      </BrowserRouter>
     );
   }
 }
